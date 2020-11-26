@@ -1,19 +1,31 @@
 <template>
-  <div>{{msg}}11111
-    <HelloWorld/>
+  <div>
+    {{msg}}
+    <button @click="goProductDetail('1')">跳转到productDetail</button>
   </div>
 </template>
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import {reactive, toRefs} from 'vue'
+import {useRouter} from 'vue-router'
 export default {
   name: 'home',
-  components: {
-    HelloWorld
-    
-  },
-  data () {
+  setup () {
+    const router = useRouter()
+    const state = reactive({
+      msg: '11'
+    })
+    const goProductDetail = (id) => {
+      router.push({
+        path: `/productDetail`,
+        query: {
+          id
+        }
+      })
+    }
+
     return {
-      msg: '首页'
+      ...toRefs(state),
+      goProductDetail
     }
   }
 }

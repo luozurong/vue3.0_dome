@@ -1,6 +1,5 @@
 <template>
   <div>
-  {{name}}
     <router-link to="/">home</router-link>
     <router-link to="product">product</router-link>
     <router-link to="cart">cart</router-link>
@@ -9,14 +8,15 @@
   </div>
 </template>
 <script>
-import { reactive, toRef } from 'vue'
+import { reactive, toRefs } from 'vue'
 export default {
+  name: 'entry',
   setup () {
     const state = reactive({
       name: 11
     })
     return {
-      ...toRef(state)
+      ...toRefs(state)
     }
   }
 }

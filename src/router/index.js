@@ -5,7 +5,9 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'entry',
       component: () => import('@/views/entry.vue'),
+      redirect: '/home',
       children: [
         {
           path: '/',
@@ -28,6 +30,10 @@ const router = createRouter({
           component: () => import('@/views/mine.vue')
         }
       ]
+    },
+    {
+      path: '/productDetail',
+      component: () => import('@/views/productDetail.vue')
     }
   ]
 })
