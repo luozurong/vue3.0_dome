@@ -3,19 +3,16 @@
     <header class="home-header wrap" :class="{'active' : headerScroll}">
       <router-link tag="i" to="./category"><i class="nbicon nbmenu2"></i></router-link>
       <div class="header-search">
-        <span class="app-name">新蜂商城</span>
+        <span class="app-name" @click="goProductDetail(1)">城</span>
         <i class="iconfont icon-search"></i>
         <router-link tag="span" class="search-title" to="./product-list?from=home">山河无恙，人间皆安</router-link>
       </div>
-      <router-link class="login" tag="span" to="./login" v-if="!isLogin">登录</router-link>
-      <router-link class="login" tag="span" to="./user" v-else>
-        <van-icon name="manager-o" />
-      </router-link>
+      <div class="login" @click="loginClick">登录</div>
     </header>
   </div>
 </template>
 <script>
-import {reactive, toRefs} from 'vue'
+import {reactive, toRefs, onMounted} from 'vue'
 import {useRouter} from 'vue-router'
 export default {
   name: 'home',
@@ -33,10 +30,21 @@ export default {
         }
       })
     }
+    const loginClick = () => {
+      console.log(1111)
+      router.push({
+        path: `/login`
+      })
+    }
+
+    onMounted(() => {
+      console.log('onmouted加载')
+    })
 
     return {
       ...toRefs(state),
-      goProductDetail
+      goProductDetail,
+      loginClick
     }
   }
 }

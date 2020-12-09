@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "cross-env NODE_ENV=development VUE_APP_Coaclss=dev vue-cli-service serve",
+    "start": "cross-env NODE_ENV=development vue-cli-service serve",
+    "prod": "cross-env NODE_ENV=product vue-cli-service serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:dev": "cross-env NODE_ENV=dev vue-cli-service build",
+    "build:test": "cross-env NODE_ENV=test vue-cli-service build",
+    "build": "cross-env NODE_ENV=product vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "less": "^3.12.2",
+    "qs": "^6.9.4",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-beta.13"
   },
@@ -20,6 +27,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.1",
+    "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
     "less-loader": "^7.1.0"
