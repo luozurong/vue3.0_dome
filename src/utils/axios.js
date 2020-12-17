@@ -17,8 +17,7 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   res => {
-    console.log(res)
-    return Promise.resolve(res)
+    return Promise.resolve(res.data)
   }
 )
 

@@ -34,7 +34,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import '../common/style/mixin.less';
+@import '../../common/style/mixin.less';
 .nav-bar{
   position: fixed;
   left: 0;

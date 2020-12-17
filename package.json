@@ -15,10 +15,13 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "element-plus": "^1.0.1-beta.8",
+    "es6-promise": "^4.2.8",
     "less": "^3.12.2",
     "qs": "^6.9.4",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-beta.13"
+    "vue-router": "^4.0.0-beta.13",
+    "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -26,6 +29,8 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-component": "^1.1.1",
     "babel-plugin-import": "^1.13.1",
     "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
