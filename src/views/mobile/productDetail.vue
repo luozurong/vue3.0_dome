@@ -1,15 +1,13 @@
 <template>
   <div>
-    productDetail
+    <vueTest :name="'luozurong'"></vueTest>
   </div>
 </template>
 <script>
+import vueTest from '@/views/vueTest.vue'
 export default {
-  name: 'home',
-  data () {
-    return {
-      msg: '首页'
-    }
+  components: {
+    vueTest
   }
 }
 </script>
