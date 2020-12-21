@@ -5,43 +5,47 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      component: () => import('@/views/pc/layout.vue')
+    },
+    {
+      path: '/mobile',
       name: 'entry',
-      component: () => import('@/views/entry.vue'),
+      component: () => import('@/views/mobile/entry.vue'),
       redirect: '/home',
       children: [
         {
           path: '/',
           name: 'home',
-          component: () => import('@/views/Home.vue')
+          component: () => import('@/views/mobile/Home.vue')
         },
         {
           path: '/product',
           name: 'product',
-          component: () => import('@/views/product.vue')
+          component: () => import('@/views/mobile/product.vue')
         },
         {
           path: '/cart',
           name: 'cart',
-          component: () => import('@/views/cart.vue')
+          component: () => import('@/views/mobile/cart.vue')
         },
         {
           path: '/mine',
           name: 'mine',
-          component: () => import('@/views/mine.vue')
+          component: () => import('@/views/mobile/mine.vue')
         }
       ]
     },
     {
       path: '/productDetail',
-      component: () => import('@/views/productDetail.vue')
+      component: () => import('@/views/mobile/productDetail.vue')
     },
     {
       path: '/login',
-      component: () => import('@/views/login.vue')
+      component: () => import('@/views/pc/login/index.vue')
     },
     {
       path: '/*',
-      component: () => import('@/views/404.vue')
+      component: () => import('@/views/mobile/404.vue')
     }
   ]
 })
